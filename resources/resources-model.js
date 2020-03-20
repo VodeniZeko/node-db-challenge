@@ -10,15 +10,15 @@ const get = async () => {
 };
 
 const getById = id => {
-  try {
-    const resource = db
-      .select("resources")
-      .where("id", id)
-      .first();
-    return resource;
-  } catch (err) {
-    console.error(err);
-  }
+  // try {
+  //   const resource = db
+  //     .select("resources")
+  //     .where("id", id)
+  //     .first();
+  //   return resource;
+  // } catch (err) {
+  //   console.error(err);
+  // }
 };
 
 const add = async newResource => {
@@ -36,16 +36,16 @@ const add = async newResource => {
 };
 
 const getByProjectId = async id => {
-  try {
-    const resources = await db
-      .select("r.id", "r.resource_name", "r.resource_description")
-      .from("resources as r")
-      .join("project_resources as pr", "r.id", "pr.resource_id")
-      .where("pr.project_id", id);
-    return resources.length !== 0 ? resources : null;
-  } catch (err) {
-    console.error(err);
-  }
+  // try {
+  //   const resources = await db
+  //     .select("r.id", "r.resource_name", "r.resource_description")
+  //     .from("resources as r")
+  //     .join("project_resources as pr", "r.id", "pr.resource_id")
+  //     .where("pr.project_id", id);
+  //   return resources.length !== 0 ? resources : null;
+  // } catch (err) {
+  //   console.error(err);
+  // }
 };
 
 module.exports = {

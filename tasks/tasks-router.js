@@ -24,7 +24,7 @@ router.post("/", (req, res) => {
     });
 });
 
-router.get("/projectid/:id", (req, res) => {
+router.get("/project/:id", (req, res) => {
   Tasks.getByProjectId(req.params.id)
     .then(projectTasks => {
       res.status(200).json(projectTasks);
